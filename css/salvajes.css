@@ -1,0 +1,910 @@
+.selectores_container{
+	border-radius: 50%;
+	height: 95vw;
+	transform: translate(-50%, -50%) rotate(20deg);
+	overflow: hidden;
+	width: 95vw;
+	z-index: 1;
+}
+
+.selectores_container > div{
+	background: #f0f0f0;
+	border-radius: 10px;
+	height: 70%;
+    position: absolute;
+    width: calc((100% * 3.14159265358979) / 3);
+}
+
+.selectores_container > div > div{
+	font-family: 'Bungee';
+	font-size: 6vw;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50% , -50%) rotate(-20deg);
+	top: 50%;
+	text-align: center;
+}
+
+.selectores_container > div > i{
+	border-radius: 50%;
+    font-size: 10vw;
+	padding: 5vw 0;
+    position: absolute;
+	text-align: center;
+    transform: rotate(-20deg);
+    width: 20vw;
+}
+
+#habitat_button > i{
+	bottom: 10px;
+	right: 2.5vw;
+}
+
+#horario_button > i{
+	top: 10px;
+	left: 2.5vw;
+}
+
+#habitat_button > div{
+	margin-top: -30px;
+    margin-left: -40px;
+}
+
+#horario_button > div{
+	margin-top: 30px;
+    margin-left: 40px;
+}
+
+#habitat_button.habitat1{
+	background: green;
+	color: #FFF;
+}
+
+#horario_button.horario1{
+	background: yellow;
+	color: #000;
+}
+
+/* selectores de horario , habitat y clima */
+#habitat_button{
+    left: -15%;
+	top: -27%;
+	transform: rotate(45deg);
+}
+#horario_button{
+	left: -52%;
+    top: 34%;
+    transform: rotate(17deg);
+}
+#clima_button{
+	left: 48%;
+    top: 34%;
+    transform: rotate(-17deg);
+}
+
+/* solo selectores de horario y habitat */
+#habitat_button{
+    left: 0%;
+	top: 0%;
+	transform: rotate(0);
+	height: 49%;
+	width: 100%;
+}
+#horario_button{
+	left: 0%;
+    top: 51%;
+    transform: rotate(0);
+	height: 49%;
+	width: 100%;
+}
+
+#clima_button{
+	display: none;
+}
+
+#salvaje_boton{
+	border: 1px solid #000;
+	border-radius: 50%;
+    box-shadow: 0px 5px 3px #000;
+	height: 55vw;
+	overflow: hidden;
+	position: relative;
+	text-align:center;
+	width: 55vw;
+	z-index: 2;
+}
+
+#salvaje_boton > div:first-child{
+	background: #f00000;
+	border-bottom: 15px solid #000;
+	height: calc(50% - 5px);
+}
+
+#salvaje_boton > div:last-child{
+	background: #f0f0f0;
+	height: calc(50% - 5px);
+	padding-top: 35px;
+}
+
+#salvaje_boton:before,
+#salvaje_boton:after{
+	content: "";
+	background: #FFF;
+	border-radius: 50%;
+	border: 4vw solid #000;
+	height: 12vw;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 12vw;
+	z-index: 1;
+}
+
+#salvaje_boton:after{
+	border: 1px solid #000;
+	height: 8vw;
+	width: 8vw;
+	z-index: 2;
+}
+
+.modal_selector{
+	background: #FFF;
+	border: 5vw solid #f0f0f0;
+	height: calc(100% - 10vw);
+	left: 0;
+	overflow-y: auto;
+	top: 0;
+	width: calc(100% - 10vw);
+}
+
+.modal_selector label{
+	display: block;
+	padding: 20px 70px 20px 20px;
+	position: relative;
+}
+
+#habitat_selector .habitat_bosque{
+	background: green;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_bosque > .icon{
+	color: green;
+}
+
+#habitat_selector .habitat_cueva_rocosa{
+	background: darkgoldenrod;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_cueva_rocosa > .icon{
+	color: darkgoldenrod;
+}
+
+#habitat_selector .habitat_monte_rocalta{
+	background: brown;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_monte_rocalta > .icon{
+	color: brown;
+}
+
+#habitat_selector .habitat_laguna{
+	background: skyblue;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_laguna > .icon{
+	color: skyblue;
+}
+
+#habitat_selector .habitat_ciudad{
+	background: darkgray;
+	color: #000;
+}
+
+#habitat_selector .habitat_ciudad > .icon{
+	color: darkgray;
+}
+
+#habitat_selector .habitat_mar{
+	background: blue;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_mar > .icon{
+	color: blue;
+}
+
+#habitat_selector .habitat_monte_nevado{
+	background: #b0d9e0;
+	color: #000;
+}
+
+#habitat_selector .habitat_monte_nevado > .icon{
+	color: #b0d9e0;
+}
+
+
+#habitat_selector .habitat_cementerio{
+	background: #666;
+	color: #FFF;
+}
+
+#habitat_selector .habitat_cementerio > .icon{
+	color: #666;
+}
+
+#habitat_selector .habitat_zona_safari{
+	background: #10c710;
+    color: #FFF;
+}
+
+#habitat_selector .habitat_zona_safari > .icon{
+	color: #10c710;
+}
+
+#habitat_selector .habitat_central_electrica{
+	background: #FFCD00;
+    color: #FFF;
+}
+
+#habitat_selector .habitat_central_electrica > .icon{
+	color: #FFCD00;
+}
+
+#habitat_selector .habitat_isla_de_dragones{
+	background: #8aab92;
+    color: #FFF;
+}
+
+#habitat_selector .habitat_isla_de_dragones > .icon{
+	color: #8aab92;
+}
+
+#habitat_selector .habitat_monte_luna{
+	background: #f5bac4;
+    color: #FFF;
+}
+
+#habitat_selector .habitat_monte_luna > .icon{
+	color: #f5bac4;
+}
+
+#habitat_selector .habitat_isla_canela{
+	background: #cc0606;;
+    color: #FFF;
+}
+
+#habitat_selector .habitat_isla_canela > .icon{
+	color: #cc0606;
+}
+
+
+#horario_selector label:nth-child(1){
+	background: yellow;
+	color: #000;
+}
+
+#horario_selector label:nth-child(1) > .icon{
+	color: yellow;
+}
+
+#horario_selector label:nth-child(2){
+	background: black;
+	color: #FFF;
+}
+
+#horario_selector label:nth-child(2) > .icon{
+	color: black;
+}
+
+.modal_selector label > input{
+	height: 18px;
+	margin: 0 10px 0 0;
+    vertical-align: middle;
+	width: 18px;
+}
+
+.modal_selector label > span{
+	font-size: 18px;
+	text-transform: capitalize;
+	vertical-align: middle;
+}
+
+.modal_selector label > .icon{
+	background: #FFF;
+	border-radius: 50%;
+	font-size: 20px;
+	padding: 8px 0;
+	position: absolute;
+	right: 15px;
+	text-align: center;
+	top: 10px;
+	width: 36px;
+}
+
+.carta_container.estilo-agua{
+	background: url(../img/patterns/7.jpg) repeat;
+}
+
+.carta_container.estilo-agua:before{
+	background: rgba(87, 221, 253, 0.3);
+}
+
+.carta_container.estilo-fuego{
+	background: url(../img/patterns/9.jpg) repeat;
+}
+
+.carta_container.estilo-fuego:before{
+	background: rgba(255, 0, 0, 0.34);
+}
+
+.carta_container.estilo-planta{
+	background: url(../img/patterns/15.jpg) repeat;
+}
+
+.carta_container.estilo-planta:before{
+	background: rgba(82, 249, 82, 0.3);
+}
+
+.carta_container.estilo-tierra{
+	background: url(../img/patterns/12.jpg) repeat;
+}
+
+.carta_container.estilo-tierra:before{
+	background: rgba(134, 106, 0, 0.3);
+}
+
+.carta_container.estilo-roca{
+	background: url(../img/patterns/6.jpg) repeat;
+}
+
+.carta_container.estilo-roca:before{
+	background: rgba(99, 79, 3, 0.3);
+}
+
+.carta_container.estilo-acero{
+	background: url(../img/patterns/1.jpg) repeat;
+}
+
+.carta_container.estilo-acero:before{
+	background: rgba(183, 183, 183, 0.24);
+}
+
+.carta_container.estilo-hielo{
+	background: url(../img/patterns/2.jpg) repeat;
+}
+
+.carta_container.estilo-hielo:before{
+	background: rgba(118, 225, 251, 0.3);
+}
+
+.carta_container.estilo-electrico{
+	background: url(../img/patterns/3.jpg) repeat;
+}
+
+.carta_container.estilo-electrico:before{
+	background: rgba(255, 214, 0, 0.34);
+}
+
+.carta_container.estilo-dragon{
+	background: url(../img/patterns/14.jpg) repeat;
+}
+
+.carta_container.estilo-dragon:before{
+	background: rgba(0, 60, 19, 0.4);
+}
+
+.carta_container.estilo-fantasma{
+	background: url(../img/patterns/7.jpg) repeat;
+}
+
+.carta_container.estilo-fantasma:before{
+	background: rgba(28, 0, 45, 0.34);
+}
+
+.carta_container.estilo-psiquico{
+	background: url(../img/patterns/4.jpg) repeat;
+}
+
+.carta_container.estilo-psiquico:before{
+	background: rgba(243, 140, 255, 0.34);
+}
+
+.carta_container.estilo-normal{
+	background: url(../img/patterns/3.jpg) repeat;
+}
+
+.carta_container.estilo-normal:before{
+	background: rgba(218, 218, 218, 0.61);
+}
+
+.carta_container.estilo-lucha{
+	background: url(../img/patterns/14.jpg) repeat;
+}
+
+.carta_container.estilo-lucha:before{
+	background: rgba(255, 155, 0, 0.34);
+}
+
+.carta_container.estilo-veneno{
+    background: url(../img/patterns/4.jpg) repeat;
+}
+
+.carta_container.estilo-veneno:before{
+	background: rgba(158, 34, 158, 0.34);
+}
+
+.carta_container.estilo-bicho{
+	background: url(../img/patterns/9.jpg) repeat;
+}
+
+.carta_container.estilo-bicho:before{
+	background: rgba(33, 183, 33, 0.3);
+}
+
+.carta_container.estilo-volador{
+
+}
+
+.carta_container.estilo-volador:before{
+	background: rgba(218, 218, 218, 0.61);
+}
+
+.carta_container.estilo-siniestro{
+	background: url(../img/patterns/10.jpg) repeat;
+}
+
+.carta_container.estilo-siniestro:before{
+	background: rgba(0, 0, 0, 0);
+}
+
+.carta_container.estilo-hada{
+	background: url(../img/patterns/11.jpg) repeat;
+}
+
+.carta_container.estilo-hada:before{
+	background: rgba(236, 179, 216, 0.34);
+}
+
+.carta_container{
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.carta_container:before{
+	background: rgba(255,255,255,.3);
+	content: "";
+	height: 100%;
+	position: absolute;
+	right:0;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.pokemon_imagen{
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+	height: 100vh;
+    left: 0;
+    margin: 0;
+    max-width: none;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+#pokemon_vida_contenedor{
+	height: 60px;
+	position: absolute;
+    right: 5%;
+    top: 6px;
+}
+
+#pokemon_vida_contenedor i{
+	color: red;
+    font-size: 60px;
+    text-shadow: 0px 3px 1px #666;
+}
+
+#pokemon_vida_contenedor p{
+	color: #FFF;
+	font-size: 24px;
+	font-weight: 600;
+	left: 50%;
+	line-height: 1;
+	position: absolute;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+}
+
+#pokemon_vida_contenedor p.vida-mayor{
+	color: #44ff44;
+	font-size: 26px;
+    text-shadow: 0 0 7px #fff;
+}
+
+#pokemon_vida_contenedor p.vida-menor{
+	color: #900303;
+    text-shadow: 0 0 7px #fff;
+}
+
+#pokemon_vida_contenedor .icon-heart-broken + p{
+	display: none;
+}
+.pokemon_name{
+	background: rgba(255,255,255,.8);
+	background: linear-gradient(to right , rgba(255,255,255,.8) 73%, #999 83%, rgba(255,255,255,.8) 93%);
+	box-shadow: 0 0 6px #666;
+	box-sizing: border-box;
+	font-weight: 600;
+	margin-left: -4vw;
+	margin-top: 21px;
+	padding: 10px 6vw;
+    width: calc(100% + 8vw);
+}
+
+.pokemon_capturado .pokemon_name:before{
+	background-image: url(../img/pokebola.svg);
+	background-size: cover;
+	content: "";
+	display: inline-block;
+	height: 17px;
+	margin-right: 5px;
+	vertical-align: middle;
+	width: 17px;
+}
+
+.carta_container hr{
+	width: 80%;
+}
+
+.carta_container .pokemon_tipos {
+	background: rgba(0,0,0,.5);
+	border-radius: 10px 0 0 10px;
+	border-right: 1px solid #FFF;
+	padding: 10px;
+    position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+	transition: .5s transform;
+	width: 40px;
+	z-index: 2;
+}
+
+.tipos-activo .pokemon_tipos{
+	transform: translate(-205px, -50%);
+}
+
+.carta_container .icon_tipo{
+	background-image: url(../img/sprite/tipos_sprite.png);
+	background-size: 450px;
+	border-radius: 50%;
+	box-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+	display: inline-block;
+	height: 58px;
+	margin-bottom: 5px;
+	width: 58px;
+	zoom: .6;
+}
+
+.carta_container .icon_tipo.tipo_doble{
+	position: relative;
+}
+
+.carta_container .icon_tipo.tipo_doble:before{
+	bottom: -10px;
+	content: "x2";
+	font-size: 25px;
+	font-weight: 600;
+    position: absolute;
+    right: 0;
+    text-shadow: 0 0 15px #000;
+}
+
+.carta_container .pokemon_tipos > i:last-child{
+	margin: 0;
+}
+
+.carta_container  i.tipo_agua {
+    background-position: -27px -29px;
+}
+
+.carta_container  i.tipo_fuego {
+    background-position: -92px -29px;
+}
+
+.carta_container  i.tipo_planta {
+    background-position: -160px -29px;
+}
+
+.carta_container  i.tipo_tierra {
+    background-position: -226px -29px;
+}
+
+.carta_container  i.tipo_roca {
+    background-position: -296px -29px;
+}
+
+.carta_container  i.tipo_acero {
+    background-position: -366px -29px;
+}
+
+
+
+.carta_container  i.tipo_hielo {
+    background-position: -27px -121px;
+}
+
+.carta_container  i.tipo_electrico {
+    background-position: -92px -121px;
+}
+
+.carta_container i.tipo_dragon {
+    background-position: -160px -121px;
+}
+
+.carta_container i.tipo_fantasma {
+    background-position: -226px -121px;
+}
+
+.carta_container i.tipo_psiquico {
+    background-position: -296px -121px;
+}
+
+.carta_container i.tipo_normal {
+    background-position: -366px -121px;
+}
+
+
+
+
+.carta_container i.tipo_lucha {
+    background-position: -27px -213px;
+}
+
+.carta_container i.tipo_veneno {
+    background-position: -92px -213px;
+}
+
+.carta_container i.tipo_bicho {
+    background-position: -160px -213px;
+}
+
+.carta_container i.tipo_volador {
+    background-position: -226px -213px;
+}
+
+.carta_container i.tipo_siniestro {
+    background-position: -296px -213px;
+}
+
+.carta_container i.tipo_hada {
+    background-position: -366px -213px;
+}
+
+
+.pokemon_tipos_relaciones{
+	background: rgba(0,0,0,.5);
+	border-radius: 10px 0 0 10px;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(205px, -50%);
+	transition: .5s transform;
+	width: 185px;
+}
+
+.tipos-activo .pokemon_tipos_relaciones{
+	transform: translate(0, -50%);
+}
+
+.pokemon_tipos_relaciones > div:nth-child(2n+1){
+	color: #FFF;
+	font-size: .9em;
+	border-bottom: 1px solid #FFF;
+	margin: 10px 0;
+	padding-bottom: 3px;
+}
+
+.pokemon_tipos_relaciones > div:nth-child(1){
+	margin-top: 0;
+}
+
+.pokemon_tipos_relaciones > div:nth-child(2n+2){
+	color: #FFF;
+}
+
+.pokemon_tipos_relaciones > div:nth-child(2n+2) > i{
+	margin-right: 10px;
+}
+
+.pokemon_tipos_relaciones > div:nth-child(2n+2) > i:last-child{
+	margin-right: 0;
+}
+
+.carta_container .pokemon_parametro{
+	bottom: 0;
+	height: 70px;
+    position: absolute;
+	text-align: center;
+    width: 107px;
+}
+
+.carta_container .pokemon_parametro > p{
+	background: #696969;
+	color: #FFF;
+	font-size: 34px;
+	font-weight: 600;
+    padding: 18px 0;
+    text-shadow: 2px 2px 2px #000;
+    width: 70px;
+}
+
+.carta_container .pokemon_parametro > i{
+	background: #696969;
+	bottom: 0;
+	color: #000;
+	font-size: 23px;
+	position: absolute;
+	text-shadow: 1px 1px 11px #FFF;
+    width: 30px;
+}
+
+#pokemon_ataque_contenedor{
+	left: 0;
+}
+
+#pokemon_ataque_contenedor > p{
+	border-radius: 0 50% 0 0;
+	box-shadow: 2px -2px 7px #999;
+	float: left;
+}
+
+#pokemon_ataque_contenedor > i{
+	border-radius: 0 50% 0 0;
+	box-shadow: 3px -2px 5px #999;
+	padding: 8px 8px 8px 0;
+	right: 0;
+}
+
+#pokemon_defensa_contenedor{
+	right: 0;
+}
+
+#pokemon_defensa_contenedor > p{
+	border-radius: 50% 0 0 0;
+	box-shadow: -3px -2px 7px #999;
+	float: right;
+}
+
+#pokemon_defensa_contenedor > i{
+	border-radius: 50% 0 0 0;
+	box-shadow: -2px -2px 5px #999;
+	padding: 8px 0 8px 8px;
+	left: 0;
+}
+
+.pokemon_velocidad{
+	bottom: 20px;
+    left: 50%;
+	position: fixed;
+    transform: translate(-50%);
+}
+
+.pokemon_velocidad > i {
+    display: inline-block;
+	font-size: 30px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.pokemon_velocidad > p {
+	font-size: 26px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.pokemon_habilidades_container{
+	bottom: 0;
+	margin: 20px 5% 120px;
+	max-height: calc(100vh - 240px);
+	position: absolute;
+	width: 90%;
+}
+
+.pokemon_velocidad,
+.pokemon_habilidades_container{
+	color: #FFF;
+	text-shadow: 2px 2px 2px #000;
+} 
+
+#pokemon_habilidades{
+	width: 100%;
+}
+
+#pokemon_habilidades > div:not(:last-child){
+	border-bottom: 1px solid rgba(0,0,0,.3);
+	margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+#pokemon_habilidades > div > div:first-child{
+	font-weight: 600;
+	margin-bottom: 3px;
+	text-transform: capitalize;
+}
+
+#pokemon_habilidades > div > div:last-child{
+	font-size: 13px;
+}
+
+#pokemon_habilidades > .habilidad_activa{
+	position: relative;
+}
+
+#pokemon_habilidades > .habilidad_activa:before{
+	background: red;
+	content: "";
+	height: 100%;
+	left: -10px;
+    position: absolute;
+    width: 3px;
+}
+
+
+
+#entrenador .entrenador_pokemons{
+	background: rgba(0,0,0,.6);
+	bottom: 0;
+	left: 0;
+	padding: 20px 0;
+	position: absolute;
+	text-align: center;
+    width: 100%;
+}
+
+#entrenador .entrenador_pokemons > div{
+	background-image: url(../img/pokebola.svg);
+	background-size: cover;
+	border-radius: 50%;
+	border-bottom: 3px solid #333;
+	color: #FFF;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 600;
+	height: 50px;
+    margin: 0 10px;
+	position: relative;
+    text-shadow: 2px 2px 2px #000;
+    width: 50px;
+}
+
+#entrenador .entrenador_pokemons > div:after{
+	bottom: -6px;
+	position: absolute;
+	width: 100%;
+}
+
+#entrenador .entrenador_pokemons > div:nth-child(1)::after{
+	content: "1";
+}
+
+#entrenador .entrenador_pokemons > div:nth-child(2)::after{
+	content: "2";
+}
+
+#entrenador .entrenador_pokemons > div:nth-child(3)::after{
+	content: "3";
+}

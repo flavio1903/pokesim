@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'poke';
+  src:
+    url('../img/fonts/poke.ttf?tokr8z') format('truetype'),
+    url('../img/fonts/poke.woff?tokr8z') format('woff'),
+    url('../img/fonts/poke.svg?tokr8z#poke') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'poke' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-cementerio:before,
+.icon-calavera:before {
+  content: "\e905";
+}
+.icon-isla-de-dragones:before,
+.icon-dragon:before {
+  content: "\e906";
+}
+.icon-isla-canela:before,
+.icon-volcan:before {
+  content: "\e907";
+}
+.icon-monte-luna:before,
+.icon-cometa:before {
+  content: "\e908";
+}
+.icon-cometa2:before {
+  content: "\e909";
+}
+.icon-mar:before,
+.icon-wave:before {
+  content: "\e902";
+}
+.icon-cueva-rocosa:before,
+.icon-cueva:before {
+  content: "\e900";
+}
+.icon-velocidad:before {
+  content: "\e901";
+}
+.icon-sun2:before {
+  content: "\e903";
+}
+.icon-moon:before {
+  content: "\e904";
+}
+.icon-monte-rocalta:before,
+.icon-terrain:before {
+  content: "\e564";
+}
+.icon-heart:before {
+  content: "\f004";
+}
+.icon-th-large:before {
+  content: "\f009";
+}
+.icon-close:before {
+  content: "\f00d";
+}
+.icon-remove:before {
+  content: "\f00d";
+}
+.icon-times:before {
+  content: "\f00d";
+}
+.icon-cog:before {
+  content: "\f013";
+}
+.icon-gear:before {
+  content: "\f013";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-align-justify:before {
+  content: "\f039";
+}
+.icon-laguna:before,
+.icon-tint:before {
+  content: "\f043";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-arrow-left:before {
+  content: "\f060";
+}
+.icon-arrow-right:before {
+  content: "\f061";
+}
+.icon-zona-safari:before,
+.icon-leaf:before {
+  content: "\f06c";
+}
+.icon-eye:before {
+  content: "\f06e";
+}
+.icon-trophy:before {
+  content: "\f091";
+}
+.icon-dashboard:before {
+  content: "\f0e4";
+}
+.icon-tachometer:before {
+  content: "\f0e4";
+}
+.icon-bolt:before {
+  content: "\f0e7";
+}
+.icon-central-electrica:before,
+.icon-flash:before {
+  content: "\f0e7";
+}
+.icon-umbrella:before {
+  content: "\f0e9";
+}
+.icon-ciudad:before,
+.icon-building-o:before {
+  content: "\f0f7";
+}
+.icon-ellipsis-v:before {
+  content: "\f142";
+}
+.icon-sun-o:before {
+  content: "\f185";
+}
+.icon-moon-o:before {
+  content: "\f186";
+}
+.icon-ciudad:before,
+.icon-building:before {
+  content: "\f1ad";
+}
+.icon-bosque:before,
+.icon-tree:before {
+  content: "\f1bb";
+}
+.icon-heartbeat:before {
+  content: "\f21e";
+}
+.icon-monte-nevado:before,
+.icon-snowflake-o:before {
+  content: "\f2dc";
+}
+.icon-shield2:before {
+  content: "\e9b4";
+}
+.icon-eyedropper:before {
+  content: "\e90a";
+}
+.icon-heart-broken:before {
+  content: "\e9db";
+}

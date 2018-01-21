@@ -1,0 +1,2 @@
+x A los pokemons de entrenadores , agregarles al lado del nombre algo que identifique que son de entrenador y NO salvajes
+x En la pokedex , los pokemons que aparecen ocultos , poder marcarlos como vistos

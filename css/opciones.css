@@ -1,0 +1,30 @@
+#opciones{
+    background: url('../img/patterns/6.jpg');
+}
+
+.lista-opciones{
+    max-height: calc(100% - 150px);
+    width: 80%;
+}
+
+.lista-opciones > li{
+    background: blue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #FFF;
+    font-weight: 600;
+    margin: 15px 0;
+    padding: 18px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+#opciones:after{
+    bottom: 5px;
+    content: '(Las opciones se activan con doble click)';
+    left: 0;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}

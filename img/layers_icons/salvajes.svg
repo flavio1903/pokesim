@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg5328"
+   height="368.23535"
+   width="368.24847">
+  <defs
+     id="defs5330">
+    <clipPath
+       id="clipPath1880"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path1882"
+         d="M 0,792 H 612 V 0 H 0 Z" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata5333">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-196.11554,-639.91398)"
+     id="layer1">
+    <g
+       id="g1876"
+       transform="matrix(13.146567,0,0,-13.146567,-6094.6811,1808.8331)">
+      <g
+         clip-path="url(#clipPath1880)"
+         id="g1878">
+        <g
+           transform="translate(495.8037,73.9971)"
+           id="g1884">
+          <path
+             id="path1886"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="m 0,0 c -0.401,-1.438 -1.719,-2.501 -3.284,-2.501 -1.568,0 -2.885,1.063 -3.288,2.501 -0.081,0.29 -0.126,0.596 -0.126,0.91 0,0.318 0.045,0.622 0.126,0.912 0.403,1.44 1.72,2.501 3.288,2.501 C -1.719,4.323 -0.401,3.262 0,1.822 0.08,1.532 0.128,1.228 0.128,0.91 0.128,0.596 0.08,0.29 0,0" />
+        </g>
+        <g
+           transform="translate(492.5166,62.7227)"
+           id="g1888">
+          <path
+             id="path1890"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="m 0,0 c -6.412,0 -11.68,4.979 -12.149,11.274 h 7.003 C -4.715,8.823 -2.574,6.955 0,6.955 c 2.575,0 4.714,1.868 5.146,4.319 h 7.006 C 11.684,4.979 6.414,0 0,0" />
+        </g>
+        <g
+           transform="translate(492.5195,87.0938)"
+           id="g1892">
+          <path
+             id="path1894"
+             style="fill:#ed1a3a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="M 0,0 C 6.411,0 11.681,-4.979 12.149,-11.274 H 5.144 C 4.712,-8.823 2.574,-6.955 0,-6.955 c -2.575,0 -4.714,-1.868 -5.149,-4.319 h -7.003 C -11.683,-4.979 -6.415,0 0,0" />
+        </g>
+        <g
+           transform="translate(492.5195,62.7227)"
+           id="g1896">
+          <path
+             id="path1898"
+             style="fill:#bbbdbf;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="M 0,0 C 6.411,0 11.681,4.979 12.149,11.274 H 8.647 C 8.314,4.979 4.563,0 0,0" />
+        </g>
+        <g
+           transform="translate(492.5195,87.0938)"
+           id="g1900">
+          <path
+             id="path1902"
+             style="fill:#b00c28;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="m 0,0 c -6.415,0 -11.683,-4.979 -12.152,-11.274 h 3.503 C -8.316,-4.979 -4.567,0 0,0" />
+        </g>
+        <g
+           transform="translate(492.5195,73.1484)"
+           id="g1904">
+          <path
+             id="path1906"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="m 0,0 c -1.021,0 -1.853,0.829 -1.853,1.852 0,1.022 0.832,1.85 1.853,1.85 1.02,0 1.85,-0.828 1.85,-1.85 C 1.85,0.829 1.02,0 0,0 M 3.284,0.849 C 2.883,-0.589 1.565,-1.652 0,-1.652 c -1.567,0 -2.885,1.063 -3.288,2.501 -0.081,0.29 -0.126,0.595 -0.126,0.91 0,0.317 0.045,0.622 0.126,0.912 C -2.885,4.11 -1.567,5.172 0,5.172 1.565,5.172 2.883,4.11 3.284,2.671 3.364,2.381 3.412,2.076 3.412,1.759 3.412,1.444 3.364,1.139 3.284,0.849 M 0,13.945 c 6.411,0 11.681,-4.978 12.149,-11.274 H 5.144 C 4.712,5.122 2.574,6.99 0,6.99 -2.575,6.99 -4.714,5.122 -5.149,2.671 h -7.003 C -11.683,8.967 -6.415,13.945 0,13.945 m 0,-24.371 c -6.415,0 -11.683,4.979 -12.152,11.275 h 7.003 c 0.435,-2.449 2.574,-4.32 5.149,-4.32 2.574,0 4.712,1.871 5.144,4.32 h 7.005 C 11.681,-5.447 6.411,-10.426 0,-10.426 m 0,26.192 c -7.723,0 -14.007,-6.283 -14.007,-14.007 0,-7.722 6.284,-14.003 14.007,-14.003 7.72,0 14.004,6.281 14.004,14.003 C 14.004,9.483 7.72,15.766 0,15.766" />
+        </g>
+        <g
+           transform="translate(476.3613,66.0488)"
+           id="g1908" />
+        <g
+           transform="translate(479.4482,64.1582)"
+           id="g1912" />
+        <g
+           transform="translate(481.5693,59.6719)"
+           id="g1916" />
+        <g
+           transform="translate(484.0605,59.3086)"
+           id="g1920" />
+        <g
+           transform="translate(486.3408,60.6934)"
+           id="g1924" />
+        <g
+           transform="translate(489.292,59.7969)"
+           id="g1928" />
+        <g
+           transform="translate(491.6426,58.8604)"
+           id="g1932" />
+        <g
+           transform="translate(493.1338,59.4463)"
+           id="g1936" />
+        <g
+           transform="translate(497.4912,57.1084)"
+           id="g1940" />
+        <g
+           transform="translate(501.709,60.6318)"
+           id="g1944" />
+        <g
+           transform="translate(502.1953,62.8408)"
+           id="g1948" />
+        <g
+           transform="translate(506.5605,64.0654)"
+           id="g1952" />
+        <g
+           transform="translate(507.6211,66.207)"
+           id="g1956" />
+        <g
+           transform="translate(476.3613,66.0488)"
+           id="g1960" />
+        <g
+           transform="translate(479.4482,64.1582)"
+           id="g1964" />
+        <g
+           transform="translate(481.5693,59.6719)"
+           id="g1968" />
+        <g
+           transform="translate(484.0605,59.3086)"
+           id="g1972" />
+        <g
+           transform="translate(486.3408,60.6934)"
+           id="g1976" />
+        <g
+           transform="translate(489.292,59.7969)"
+           id="g1980" />
+        <g
+           transform="translate(491.6426,58.8604)"
+           id="g1984" />
+        <g
+           transform="translate(493.1338,59.4463)"
+           id="g1988" />
+        <g
+           transform="translate(497.4912,57.1084)"
+           id="g1992" />
+        <g
+           transform="translate(501.709,60.6318)"
+           id="g1996" />
+        <g
+           transform="translate(502.1953,62.8408)"
+           id="g2000" />
+        <g
+           transform="translate(506.5605,64.0654)"
+           id="g2004" />
+        <g
+           transform="translate(507.6211,66.207)"
+           id="g2008" />
+        <g
+           transform="translate(479.0088,87.6865)"
+           id="g2012" />
+        <g
+           transform="translate(481.875,91.6318)"
+           id="g2016" />
+        <g
+           transform="translate(487.2363,89.665)"
+           id="g2020" />
+        <g
+           transform="translate(492.4004,97.332)"
+           id="g2024" />
+        <g
+           transform="translate(493.2412,90.6367)"
+           id="g2028" />
+        <g
+           transform="translate(496.498,93.1504)"
+           id="g2032" />
+        <g
+           transform="translate(500.5732,89.4092)"
+           id="g2036" />
+        <g
+           transform="translate(502.9785,86.5547)"
+           id="g2040" />
+        <g
+           transform="translate(509.2578,87.3457)"
+           id="g2044" />
+        <g
+           transform="translate(508.8584,87.2793)"
+           id="g2048" />
+        <g
+           transform="translate(479.0088,87.6865)"
+           id="g2052" />
+        <g
+           transform="translate(481.875,91.6318)"
+           id="g2056" />
+        <g
+           transform="translate(487.2363,89.665)"
+           id="g2060" />
+        <g
+           transform="translate(492.4004,97.332)"
+           id="g2064" />
+        <g
+           transform="translate(493.2412,90.6367)"
+           id="g2068" />
+        <g
+           transform="translate(496.498,93.1504)"
+           id="g2072" />
+        <g
+           transform="translate(500.5732,89.4092)"
+           id="g2076" />
+        <g
+           transform="translate(502.9785,86.5547)"
+           id="g2080" />
+        <g
+           transform="translate(509.2578,87.3457)"
+           id="g2084" />
+        <g
+           transform="translate(508.8584,87.2793)"
+           id="g2088" />
+      </g>
+    </g>
+  </g>
+</svg>

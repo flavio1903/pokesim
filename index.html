@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<meta name="theme-color" content="#FFCD00" />
+		
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+		
+		<link href="https://fonts.googleapis.com/css?family=Acme|Anton|Bungee|Montserrat:400,600|Risque" rel="stylesheet">
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/fonts.css" rel="stylesheet" type="text/css">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<link href="css/salvajes.css" rel="stylesheet" type="text/css">
+		<link href="css/pokedex.css" rel="stylesheet" type="text/css">
+		<link href="css/opciones.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<main>
+			<header>
+				<i class="icon-menu icon-align-justify"></i>
+				<i class="logo"></i>
+			</header>
+			
+			<div id="layers_container">			
+				<!-- Simulador de salvajes -->
+				<div class="layer layer-salvajes">
+					<div class="selectores_container centered">
+						<div id="habitat_button" data-modal="habitat_selector" class="habitat1">
+							<div>Bosque</div>
+							<i class="icon-tree"></i>
+						</div>
+						<div id="horario_button" data-modal="horario_selector" class="horario1">
+							<div>Dia</div>
+							<i class="icon-sun2"></i>
+						</div>
+						<div id="clima_button"></div>
+					</div>
+					<div id="salvaje_boton" class="centered">
+						<div></div>
+						<div>GENERAR!</div>
+					</div>
+					
+					<div data-modal="opciones" class="left_bottom_button">
+						<i class="icon-cog"></i>
+					</div>
+
+					<div data-modal="pokedex" class="right_bottom_button">
+						<img src="img/layers_icons/pokedex.svg" data-modal="pokedex">
+					</div>
+				</div>
+				
+				
+				<!-- Pokedex -->
+				<div id="pokedex" class="layer layer-float layer-pokedex">
+					<div id="pokedex_container" class="pokedex_container">
+					</div>
+				</div>
+
+				<!-- Opciones -->
+				<div id="opciones" class="layer layer-float layer-pokedex">
+					<ul class="lista-opciones centered">
+						<li id="resetear_pokedex">Resetear pokedex</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="habitat_selector" class="modal_selector layer-float modal-ontop"></div>
+					
+			<div id="horario_selector" class="modal_selector layer-float modal-ontop">
+				<label>
+					<input type="radio" name="horario" value="0" checked>
+					<span>D&iacute;a</span>
+					<i class="icon icon-sun2"></i>
+				</label>
+				<label>
+					<input type="radio" name="horario" value="1">
+					<span>Noche</span>
+					<i class="icon icon-moon"></i>
+				</label>
+			</div>
+
+			<div id="entrenador" class="carta_container layer-float modal-ontop">
+				<div id="entrenador_pokemons" class="entrenador_pokemons"></div>
+				<img id="entrenador_imagen" class="pokemon_imagen"/>
+			</div>
+			
+			<div id="pokemon_salvaje" class="carta_container layer-float modal-ontop">
+				<div id="pokemon_name" class="pokemon_name"></div>
+				<div id="pokemon_vida_contenedor">
+					<i id="pokemon_vida_icono" class="icon-heart"></i>
+					<p id="pokemon_vida"></p>
+				</div>
+
+				<img id="pokemon_imagen" class="pokemon_imagen"></img>
+					
+				<div id="pokemon_tipos" class="pokemon_tipos text-center"></div>
+				<div class="pokemon_tipos_relaciones">
+					<div>Debilidad</div>
+					<div id="pokemon_tipos_debilidad"></div>
+					<div>Resistencia</div>
+					<div id="pokemon_tipos_resistencia"></div>
+					<div>Inmunidad</div>
+					<div id="pokemon_tipos_inmunidad"></div>
+				</div>
+				
+				<div  class="pokemon_habilidades_container">
+					<div id="pokemon_habilidades"></div>
+				</div>
+				
+				<div id="pokemon_ataque_contenedor" class="pokemon_parametro">
+					<i class="icon-eyedropper"></i>
+					<p id="pokemon_ataque"></p>
+				</div>
+				<div id="pokemon_defensa_contenedor" class="pokemon_parametro">
+					<i class="icon-shield2"></i>
+					<p id="pokemon_defensa"></p>
+				</div>
+				<div id="pokemon_velocidad_contenedor" class="pokemon_velocidad">
+					<i class="icon-velocidad"></i>
+					<p id="pokemon_velocidad"></p>
+				</div>
+			</div>
+
+			<div id="pokemon_muestra" class="layer-float modal-ontop modal-extra">
+				<i data-dismiss="pokemon_muestra" class="icon-close"></i>
+				<i id="pokedex_siguiente" class="icon-arrow-right"></i>
+				<i id="pokedex_anterior" class="icon-arrow-left"></i>
+				<div id="pokemon_muestra_name" class="pokemon_name"></div>
+				<img id="pokemon_muestra_imagen" class="pokemon_imagen"></img>
+			</div>
+			
+			<footer></footer>
+		</main>
+		
+		<script src="js/db.js"></script>
+		<script src="js/modals.js"></script>
+		<script src="js/layers.js"></script>
+		<script src="js/utiles.js"></script>
+		<script src="js/salvajes.js"></script>
+		<script src="js/pokedex.js"></script>
+		<script src="js/opciones.js"></script>
+		<script>
+			var modals = new Modals();
+			//var layers = new Layers();
+			var utiles = new Utiles();
+			var salvajes = new Salvajes();
+			var pokedex = new Pokedex();
+			var opciones = new Opciones();
+		</script>
+	</body>
+</html>
