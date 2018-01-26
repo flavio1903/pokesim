@@ -118,7 +118,7 @@ Salvajes.prototype = {
 		this.options.entrenador.pokemons_container.addEventListener('click', (function(e){
 			if(e.target.classList.contains('entrenador-pokemon-boton')){
 				window.location.hash = 'modal-extran-salvaje';
-				this.generar_salvaje(e.target, e.target.datos);
+				this.generar_salvaje(e.target, e.target.datos, true);
 			}
 		}).bind(this), false)
 	},
@@ -164,7 +164,7 @@ Salvajes.prototype = {
 		this.options.entrenador.imagen.src = 'img/trainers/01.jpg';
 	},
 
-	generar_salvaje: function(boton, pokemon_precargado){
+	generar_salvaje: function(boton, pokemon_precargado, es_entrenador){
 		var habitat_index = this.options.habitat_selector.querySelector('input:checked').value * 1,
 			horario_index = this.options.horario_selector.querySelector('input:checked').value * 1,
 			nombre_lugar = db.habitats[habitat_index].replace(/ /g, '_') + '_' +  db.horarios[horario_index],
@@ -182,6 +182,9 @@ Salvajes.prototype = {
 		}else{
 			this.options.pokemon_generado_index = this.calcular_pokemon_generado(listado_pokemons);
 		}
+
+		this.options.pokemon_salvaje.vida.classList.remove('vida-mayor');
+		this.options.pokemon_salvaje.vida.classList.remove('vida-menor');
 		
 		pokedex.marcar_visto(this.options.pokemon_generado_index);
 		this.options.pokemon_generado = db.pokemons[this.options.pokemon_generado_index];
@@ -292,8 +295,8 @@ Salvajes.prototype = {
 			this.options.pokemon_salvaje.ataque.innerText = datos_pokemon_precargado.ataque;
 			this.options.pokemon_salvaje.defensa.innerText = datos_pokemon_precargado.defensa;
 			this.options.pokemon_salvaje.velocidad.innerText = datos_pokemon_precargado.velocidad;
-			this.pokemon_vida_original = datos_pokemon_precargado.vida;
-			this.pokemon_vida_actual = datos_pokemon_precargado.vida;
+			this.pokemon_vida_original = parseInt(datos_pokemon_precargado.vida);
+			this.pokemon_vida_actual = parseInt(datos_pokemon_precargado.vida);
 		}else{
 			var ataque = utiles.generar_random(2, 10, true) + ((this.options.pokemon_generado.fase - 1) * 2),
 				defensa = utiles.generar_random(2, 10, true) + ((this.options.pokemon_generado.fase - 1) * 2),
@@ -320,7 +323,13 @@ Salvajes.prototype = {
 			}
 		}	
 
-		this.options.pokemon_salvaje.nombre.innerText = '#' + pokemon_generado_numero + ' ' + this.options.pokemon_generado.nombre;
+		var nameHtml = '<span>#' + pokemon_generado_numero + ' ' + this.options.pokemon_generado.nombre + '</span>';
+		if(es_entrenador){
+			nameHtml = '<i class="icono-entrenador"></i>' + nameHtml;
+		}else if(pokedex.options.datos_guardados[pokemon_generado_numero] != null && pokedex.options.datos_guardados[pokemon_generado_numero][0] === 1){
+			nameHtml = '<i class="icono-capturado"></i>' + nameHtml;
+		}
+		this.options.pokemon_salvaje.nombre.innerHTML = nameHtml;
 		this.options.pokemon_salvaje.imagen.src = 'img/pokemons/fullcard/' + pokemon_generado_numero + '.jpg';
 		
 		this.chequear_habilidades();

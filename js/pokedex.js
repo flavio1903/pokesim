@@ -65,11 +65,12 @@ Pokedex.prototype = {
 			
 			var pokemon_guardado = this.options.datos_guardados[utiles.convertir_numero(String(i), 3)];
 			if( pokemon_guardado != null){
-				pokemon_guardado = pokemon_guardado.split('_');
-				if(pokemon_guardado[0] == '1'){
+				if(pokemon_guardado[0] === 1){
 					pokemon_pokedex.classList.add(this.options.pokemon_capturado_clase);
+					pokemon_pokedex.capturado = true;
 				}else {
 					pokemon_pokedex.classList.add(this.options.pokemon_visto_clase);
+					pokemon_pokedex.capturado = false;
 				}
 			}
 			
@@ -77,7 +78,6 @@ Pokedex.prototype = {
 			pokemon_pokedex_numero.innerText = i + 1;
 
 			pokemon_pokedex.index = i;
-			pokemon_pokedex.capturado = false;
 			pokemon_pokedex.addEventListener('click', this.marcar_captura.bind(this), false);
 			
 			pokemon_pokedex_nombre.innerText = db.pokemons[i].nombre;
@@ -99,34 +99,36 @@ Pokedex.prototype = {
 		if(this.first_click != null){
 			clearTimeout(this.first_click);
 			this.first_click = null;
-			/*if(e.currentTarget.className.indexOf(this.options.pokemon_capturado_clase) > -1){
-				e.currentTarget.classList.remove(this.options.pokemon_capturado_clase);
-				e.currentTarget.classList.add(this.options.pokemon_visto_clase);
-			}else if(e.currentTarget.className.indexOf(this.options.pokemon_visto_clase) > -1){
+			var data_index = utiles.convertir_numero(String(e.currentTarget.index) , 3),
+			data = this.options.datos_guardados[data_index];
+
+
+			if(e.currentTarget.className.indexOf(this.options.pokemon_visto_clase) > -1){
 				e.currentTarget.classList.remove(this.options.pokemon_visto_clase);
+
 				if(e.currentTarget.capturado === false){
-					e.currentTarget.capturado = true;
+					if(data[1] === 0){
+						e.currentTarget.capturado = true;
+					}
 					e.currentTarget.classList.add(this.options.pokemon_capturado_clase);
+					
+					this.options.datos_guardados[data_index] = [1,data[1]];
 				}else{
 					e.currentTarget.capturado = false;
+					delete this.options.datos_guardados[utiles.convertir_numero(String(e.currentTarget.index) , 3)];
 				}
 			}else{
-				e.currentTarget.classList.add(this.options.pokemon_visto_clase);
-			}*/
-			
-			if(e.currentTarget.className.indexOf(this.options.pokemon_visto_clase) > -1){
-				e.currentTarget.classList.add(this.options.pokemon_capturado_clase);
-				e.currentTarget.classList.remove(this.options.pokemon_visto_clase);
-				var data = this.options.datos_guardados[utiles.convertir_numero(String(e.currentTarget.index) , 3)].split('_');
-				this.options.datos_guardados[utiles.convertir_numero(String(e.currentTarget.index) , 3)] = '1_' + data[2];
-				this.guardar_datos();
-			}else if(e.currentTarget.className.indexOf(this.options.pokemon_capturado_clase) > -1){
 				e.currentTarget.classList.remove(this.options.pokemon_capturado_clase);
 				e.currentTarget.classList.add(this.options.pokemon_visto_clase);
-				var data = this.options.datos_guardados[utiles.convertir_numero(String(e.currentTarget.index) , 3)].split('_');
-				this.options.datos_guardados[utiles.convertir_numero(String(e.currentTarget.index) , 3)] = '0_' + data[2];
-				this.guardar_datos();
+				
+				if(data != null){
+					this.options.datos_guardados[data_index] = [0,data[1]];
+				}else{
+					this.options.datos_guardados[data_index] = [0,0];
+				}
 			}
+
+			this.guardar_datos();
 		}else{
 			var index = e.currentTarget.index;
 			this.first_click = setTimeout((function(){
@@ -151,10 +153,9 @@ Pokedex.prototype = {
 			data = this.options.datos_guardados[utiles.convertir_numero(String(index) , 3)];
 		if(data == null){
 			elemento.classList.add(this.options.pokemon_visto_clase);
-			this.options.datos_guardados[utiles.convertir_numero(String(index) , 3)] = '0_1';
+			this.options.datos_guardados[utiles.convertir_numero(String(index) , 3)] = [0,1];
 		}else{
-			data = data.split('_');
-			this.options.datos_guardados[utiles.convertir_numero(String(index) , 3)] = data[0] + '_' + ((data[1] * 1) + 1);
+			this.options.datos_guardados[utiles.convertir_numero(String(index) , 3)] = [data[0],((data[1] * 1) + 1)];
 		}
 		
 		this.guardar_datos();

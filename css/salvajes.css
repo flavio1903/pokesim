@@ -326,150 +326,6 @@
 	width: 36px;
 }
 
-.carta_container.estilo-agua{
-	background: url(../img/patterns/7.jpg) repeat;
-}
-
-.carta_container.estilo-agua:before{
-	background: rgba(87, 221, 253, 0.3);
-}
-
-.carta_container.estilo-fuego{
-	background: url(../img/patterns/9.jpg) repeat;
-}
-
-.carta_container.estilo-fuego:before{
-	background: rgba(255, 0, 0, 0.34);
-}
-
-.carta_container.estilo-planta{
-	background: url(../img/patterns/15.jpg) repeat;
-}
-
-.carta_container.estilo-planta:before{
-	background: rgba(82, 249, 82, 0.3);
-}
-
-.carta_container.estilo-tierra{
-	background: url(../img/patterns/12.jpg) repeat;
-}
-
-.carta_container.estilo-tierra:before{
-	background: rgba(134, 106, 0, 0.3);
-}
-
-.carta_container.estilo-roca{
-	background: url(../img/patterns/6.jpg) repeat;
-}
-
-.carta_container.estilo-roca:before{
-	background: rgba(99, 79, 3, 0.3);
-}
-
-.carta_container.estilo-acero{
-	background: url(../img/patterns/1.jpg) repeat;
-}
-
-.carta_container.estilo-acero:before{
-	background: rgba(183, 183, 183, 0.24);
-}
-
-.carta_container.estilo-hielo{
-	background: url(../img/patterns/2.jpg) repeat;
-}
-
-.carta_container.estilo-hielo:before{
-	background: rgba(118, 225, 251, 0.3);
-}
-
-.carta_container.estilo-electrico{
-	background: url(../img/patterns/3.jpg) repeat;
-}
-
-.carta_container.estilo-electrico:before{
-	background: rgba(255, 214, 0, 0.34);
-}
-
-.carta_container.estilo-dragon{
-	background: url(../img/patterns/14.jpg) repeat;
-}
-
-.carta_container.estilo-dragon:before{
-	background: rgba(0, 60, 19, 0.4);
-}
-
-.carta_container.estilo-fantasma{
-	background: url(../img/patterns/7.jpg) repeat;
-}
-
-.carta_container.estilo-fantasma:before{
-	background: rgba(28, 0, 45, 0.34);
-}
-
-.carta_container.estilo-psiquico{
-	background: url(../img/patterns/4.jpg) repeat;
-}
-
-.carta_container.estilo-psiquico:before{
-	background: rgba(243, 140, 255, 0.34);
-}
-
-.carta_container.estilo-normal{
-	background: url(../img/patterns/3.jpg) repeat;
-}
-
-.carta_container.estilo-normal:before{
-	background: rgba(218, 218, 218, 0.61);
-}
-
-.carta_container.estilo-lucha{
-	background: url(../img/patterns/14.jpg) repeat;
-}
-
-.carta_container.estilo-lucha:before{
-	background: rgba(255, 155, 0, 0.34);
-}
-
-.carta_container.estilo-veneno{
-    background: url(../img/patterns/4.jpg) repeat;
-}
-
-.carta_container.estilo-veneno:before{
-	background: rgba(158, 34, 158, 0.34);
-}
-
-.carta_container.estilo-bicho{
-	background: url(../img/patterns/9.jpg) repeat;
-}
-
-.carta_container.estilo-bicho:before{
-	background: rgba(33, 183, 33, 0.3);
-}
-
-.carta_container.estilo-volador{
-
-}
-
-.carta_container.estilo-volador:before{
-	background: rgba(218, 218, 218, 0.61);
-}
-
-.carta_container.estilo-siniestro{
-	background: url(../img/patterns/10.jpg) repeat;
-}
-
-.carta_container.estilo-siniestro:before{
-	background: rgba(0, 0, 0, 0);
-}
-
-.carta_container.estilo-hada{
-	background: url(../img/patterns/11.jpg) repeat;
-}
-
-.carta_container.estilo-hada:before{
-	background: rgba(236, 179, 216, 0.34);
-}
-
 .carta_container{
 	height: 100%;
 	left: 0;
@@ -541,6 +397,30 @@
 #pokemon_vida_contenedor .icon-heart-broken + p{
 	display: none;
 }
+.icono-capturado{
+	background-image: url(../img/pokebola.svg);
+	background-size: cover;
+	display: inline-block;
+	height: 14px;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 14px;
+}
+
+.icono-entrenador{
+	background-image: url(../img/red.png);
+	background-size: cover;
+	display: inline-block;
+	height: 40px;
+	margin-top: -12.5px;
+	position: absolute;
+	width: 40px;
+}
+
+.icono-entrenador + span{
+	margin-left: 45px;
+}
+
 .pokemon_name{
 	background: rgba(255,255,255,.8);
 	background: linear-gradient(to right , rgba(255,255,255,.8) 73%, #999 83%, rgba(255,255,255,.8) 93%);
