@@ -24,12 +24,12 @@ var Salvajes = function(options){
 			habilidades: document.getElementById('pokemon_habilidades'),
 			vida_icono: document.getElementById('pokemon_vida_icono')
 		},
+		atributos_variables: ['vida','ataque','defensa'],
 		entrenador:{
 			layer: document.getElementById('entrenador'),
 			pokemons_container: document.getElementById('entrenador_pokemons'),
 			imagen: document.getElementById('entrenador_imagen')
 		},
-		bajar_vida_timeout: null,
 		pokemon_generado: null,
 		pokemon_generado_index: null,
 		pokemon_habilidades: [],
@@ -89,9 +89,12 @@ Salvajes.prototype = {
 			this.options.horario_inputs[i].addEventListener('change', this.cambio_horario.bind(this), false);
 		}
 		
-		// Se resta la vida del pokemon al hacer un click sobre el mismo
-		// Se aumenta ña voda del pokemon al hacer doble click sobre el mismo
-		this.options.pokemon_salvaje.vida_contenedor.addEventListener('click', this.cambio_vida_salvaje.bind(this), false);
+		// Se aumenta en 1 punto el parametro al hacer un click sobre él mismo
+		// Se restan 1 punto el parametro pulsado , cada 0.5 segundos
+		this.options.atributos_variables.forEach((function(parametro, index){
+			this.options.pokemon_salvaje[parametro].addEventListener('touchstart', this.cambio_atributo_salvaje.bind(this), false);
+			this.options.pokemon_salvaje[parametro].addEventListener('touchend', this.fin_cambio_atributo_salvaje.bind(this), false);
+		}).bind(this))
 		
 		//Genera el pokemon salvaje al pulsar en la pokebola principal
 		this.options.salvaje_boton.addEventListener('click', this.generar_entrenador_pokemon.bind(this), false);
@@ -142,7 +145,7 @@ Salvajes.prototype = {
 	generar_entrenador_pokemon: function(e){
 		this.options.pokemon_carta.classList.remove('modal-extra');
 		var random = utiles.generar_random(0, 100, true);
-		if(random < 20){
+		if(random < 100){
 			this.generar_entrenador();
 			window.location.hash = 'modal-entrenador';
 		}else{
@@ -152,11 +155,34 @@ Salvajes.prototype = {
 	},
 
 	generar_entrenador: function(){
-		var cantidad_pokemons = utiles.generar_random(1, 4, true);
+		var cantidad_pokemons_random = utiles.generar_random(0, 100, true);
+			cantidad_pokemons = 0;
 			iconos_pokemon = '';
+
+		if(cantidad_pokemons_random < 49){
+			cantidad_pokemons = 1;
+		}else if(cantidad_pokemons_random < 76){
+			cantidad_pokemons = 2;
+		}
+		else if(cantidad_pokemons_random < 83){
+			cantidad_pokemons = 3;
+		}
+		else if(cantidad_pokemons_random < 90){
+			cantidad_pokemons = 4;
+		}
+		else if(cantidad_pokemons_random < 95){
+			cantidad_pokemons = 5;
+		}
+		else{
+			cantidad_pokemons = 6;
+		}
 
 		for(let i=0; i < cantidad_pokemons; i++){
 			iconos_pokemon += '<div class="entrenador-pokemon-boton"></div>';
+		}
+
+		if(cantidad_pokemons > 4){
+			iconos_pokemon = '<div class="centrar-pokebolas">' + iconos_pokemon + '</div>'
 		}
 
 		this.options.entrenador.pokemons_container.innerHTML = iconos_pokemon;
@@ -183,8 +209,15 @@ Salvajes.prototype = {
 			this.options.pokemon_generado_index = this.calcular_pokemon_generado(listado_pokemons);
 		}
 
-		this.options.pokemon_salvaje.vida.classList.remove('vida-mayor');
-		this.options.pokemon_salvaje.vida.classList.remove('vida-menor');
+		this.options.pokemon_carta.querySelectorAll('.valor-mayor').forEach(function(element, index){
+			element.classList.remove('valor-mayor');
+		})
+		this.options.pokemon_carta.querySelectorAll('.valor-menor').forEach(function(element, index){
+			element.classList.remove('valor-menor');
+		})
+		this.options.pokemon_carta.querySelectorAll('.valor-cero').forEach(function(element, index){
+			element.classList.remove('valor-cero');
+		})
 		
 		pokedex.marcar_visto(this.options.pokemon_generado_index);
 		this.options.pokemon_generado = db.pokemons[this.options.pokemon_generado_index];
@@ -193,8 +226,7 @@ Salvajes.prototype = {
 		//Se cierra la ventana de influencias de tipos
 		this.options.pokemon_carta.classList.remove('tipos-activo');
 		
-		var vida_icono = this.options.pokemon_salvaje.vida_contenedor.getElementsByClassName('icon-heart-broken');
-		if(vida_icono.length > 0){
+		if(this.options.pokemon_salvaje.vida_icono.classList.contains('icon-heart-broken') > 0){
 			vida_icono[0].classList.add('icon-heart');
 			vida_icono[0].classList.remove('icon-heart-broken');
 		}
@@ -292,11 +324,12 @@ Salvajes.prototype = {
 		
 		if(datos_pokemon_precargado != null){
 			this.options.pokemon_salvaje.vida.innerText = datos_pokemon_precargado.vida;
+			this.options.pokemon_salvaje.vida.original = datos_pokemon_precargado.vida;
 			this.options.pokemon_salvaje.ataque.innerText = datos_pokemon_precargado.ataque;
+			this.options.pokemon_salvaje.ataque.original = datos_pokemon_precargado.ataque;
 			this.options.pokemon_salvaje.defensa.innerText = datos_pokemon_precargado.defensa;
+			this.options.pokemon_salvaje.defensa.original = datos_pokemon_precargado.defensa;
 			this.options.pokemon_salvaje.velocidad.innerText = datos_pokemon_precargado.velocidad;
-			this.pokemon_vida_original = parseInt(datos_pokemon_precargado.vida);
-			this.pokemon_vida_actual = parseInt(datos_pokemon_precargado.vida);
 		}else{
 			var ataque = utiles.generar_random(2, 10, true) + ((this.options.pokemon_generado.fase - 1) * 2),
 				defensa = utiles.generar_random(2, 10, true) + ((this.options.pokemon_generado.fase - 1) * 2),
@@ -304,11 +337,12 @@ Salvajes.prototype = {
 				vida = defensa * 2
 
 			this.options.pokemon_salvaje.vida.innerText = vida;
+			this.options.pokemon_salvaje.vida.original = vida;
 			this.options.pokemon_salvaje.ataque.innerText = ataque;
+			this.options.pokemon_salvaje.ataque.original = ataque;
 			this.options.pokemon_salvaje.defensa.innerText = defensa;
+			this.options.pokemon_salvaje.defensa.original = defensa;
 			this.options.pokemon_salvaje.velocidad.innerText = velocidad;
-			this.pokemon_vida_original = vida;
-			this.pokemon_vida_actual = vida;
 
 			if(boton){
 				datos_pokemon_precargado = {
@@ -334,42 +368,61 @@ Salvajes.prototype = {
 		
 		this.chequear_habilidades();
 	},
-	
-	cambio_vida_salvaje: function(e){
-		if(!this.bajar_vida_timeout){
-			this.bajar_vida_timeout = setTimeout((function(){
-				if(this.pokemon_vida_actual > 0){
-					this.pokemon_vida_actual--;
-					this.options.pokemon_salvaje.vida.innerText = this.pokemon_vida_actual;
-					if(this.pokemon_vida_actual === 0){
-						this.options.pokemon_salvaje.vida_icono.classList.remove('icon-heart');
-						this.options.pokemon_salvaje.vida_icono.classList.add('icon-heart-broken');
-					}else if(this.pokemon_vida_actual === this.pokemon_vida_original - 1){
-						this.options.pokemon_salvaje.vida.classList.add('vida-menor');
-					}else if(this.pokemon_vida_actual === this.pokemon_vida_original){
-						this.options.pokemon_salvaje.vida.classList.remove('vida-mayor');
-					}
-				}
-				
-				this.bajar_vida_timeout = null;
-				this.chequear_habilidades();
-				
-			}).bind(this), 200);
-		}else{
-			clearTimeout(this.bajar_vida_timeout);
-			this.bajar_vida_timeout = null;
-			this.pokemon_vida_actual++;
-			this.options.pokemon_salvaje.vida.innerText = this.pokemon_vida_actual;
 
-			if(this.pokemon_vida_actual === 1){
-				vida_icono[0].classList.add('icon-heart');
-				vida_icono[0].classList.remove('icon-heart-broken');
-			}else if(this.pokemon_vida_actual === this.pokemon_vida_original + 1){
-				this.options.pokemon_salvaje.vida.classList.add('vida-mayor');
-			}else if(this.pokemon_vida_actual === this.pokemon_vida_original){
-				this.options.pokemon_salvaje.vida.classList.remove('vida-menor');
+	cambio_atributo_salvaje:function(e){
+		this.atributo_modificando = e.currentTarget;
+		this.atributo_elemento_time = new Date();
+
+		this.atributo_disminuir_interval = setInterval((function(){
+			let nuevo_valor = parseInt(this.atributo_modificando.innerText) - 1;
+			if(nuevo_valor < 0){
+				clearInterval(this.atributo_disminuir_interval);
+				this.atributo_disminuir_interval = null;
+				return;
 			}
+
+			this.atributo_modificando.innerText = nuevo_valor;
+			this.chequear_atributo_valor(this.atributo_modificando);
 			this.chequear_habilidades();
+		}).bind(this), 500);
+	},
+
+	fin_cambio_atributo_salvaje:function(e){
+		clearInterval(this.atributo_disminuir_interval);
+		this.atributo_disminuir_interval = null;
+		if(this.atributo_elemento_time != null && new Date() - this.atributo_elemento_time < 200){
+			if(e.currentTarget.primerclic != null){
+				let nuevo_valor = parseInt(e.currentTarget.innerText) + 1;
+				e.currentTarget.innerText = nuevo_valor;
+				this.chequear_atributo_valor(e.currentTarget);
+				this.chequear_habilidades();
+			}else{
+				e.currentTarget.primerclic = true;
+				setTimeout((function(){
+					this.primerclic = null;
+				}).bind(e.currentTarget), 200)
+			}
+		}
+	},
+
+	chequear_atributo_valor: function(elemento){
+		let valor = parseInt(elemento.innerText);
+
+		if(valor === elemento.original){
+			elemento.parentElement.classList.remove('valor-menor');
+			elemento.parentElement.classList.remove('valor-mayor');
+		}else if(valor > elemento.original){
+			elemento.parentElement.classList.add('valor-mayor');
+			elemento.parentElement.classList.remove('valor-menor');
+		}else if(valor < elemento.original){
+			elemento.parentElement.classList.add('valor-menor');
+			elemento.parentElement.classList.remove('valor-mayor');
+		}
+		
+		if(valor > 0){
+			elemento.parentElement.classList.remove('valor-cero');
+		}else{
+			elemento.parentElement.classList.add('valor-cero');
 		}
 	},
 	
@@ -378,16 +431,18 @@ Salvajes.prototype = {
 			for(var i=0; i < this.options.pokemon_habilidades.length; i++){
 				switch(this.options.pokemon_habilidades[i][0]){
 					case 'ultimo_esfuerzo':
-						if(this.options.pokemon_salvaje.vida.innerText * 1 === 1){
+						if(parseInt(this.options.pokemon_salvaje.vida.innerText) === 1){
 							if(this.options.pokemon_habilidades[i][1] == false){
 								document.getElementById('ultimo_esfuerzo').classList.add('habilidad_activa');
-								this.options.pokemon_salvaje.ataque.innerText = this.options.pokemon_salvaje.ataque.innerText * 1 + 4;
+								this.options.pokemon_salvaje.ataque.innerText = parseInt(this.options.pokemon_salvaje.ataque.innerText) + 4;
 								this.options.pokemon_habilidades[i][1] = true;
+								this.chequear_atributo_valor(this.options.pokemon_salvaje.ataque);
 							}
 						}else if(this.options.pokemon_habilidades[i][1] == true){
 							document.getElementById('ultimo_esfuerzo').classList.remove('habilidad_activa');
-							this.options.pokemon_salvaje.ataque.innerText = this.options.pokemon_salvaje.ataque.innerText * 1 - 4;
+							this.options.pokemon_salvaje.ataque.innerText = parseInt(this.options.pokemon_salvaje.ataque.innerText) - 4;
 							this.options.pokemon_habilidades[i][1] = false;
+							this.chequear_atributo_valor(this.options.pokemon_salvaje.ataque);
 						}
 						break;
 				}

@@ -1,0 +1,14 @@
+Commit 2 - 25/01/2018 22:35
+
+x A los pokemons de entrenadores , agregarles al lado del nombre algo que identifique que son de entrenador y NO salvajes
+x En la pokedex , los pokemons que aparecen ocultos , poder marcarlos como vistos
+x Se eliminan estilos sin uso (estilos que daban un fondo y un color particular para cada tipo de pokemon)
+
+Commit 3
+
+X Asi como se permite quitar/aumentar la vida, se debe permitir lo mismo para el ataque y la defensa
+x Cambiar la logica actual para variar atributos. Actualmente con un click, se disminuye en 1 y con doble click se aumenta en 1. 
+    Hacer que con un click aumente en 1 y manteniendo pulsado disminuya 2 por segundo
+x Actualizacion de estilos en los atributos cuando son mayores o menores que los valores originales
+x La probabilidad de que aparezca un entrenador baja de 20% a 15%
+x Se actualizan los entrenadores para que puedan portar hasta 6 pokemons

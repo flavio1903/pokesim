@@ -372,30 +372,36 @@
     text-shadow: 0px 3px 1px #666;
 }
 
+#pokemon_vida_contenedor.valor-cero > i:before{
+	content: "\e9db" !important;
+}
+
 #pokemon_vida_contenedor p{
 	color: #FFF;
 	font-size: 24px;
 	font-weight: 600;
 	left: 50%;
 	line-height: 1;
+	padding: 10px;
 	position: absolute;
+	text-align: center;
     top: 50%;
-    transform: translate(-50% ,-50%);
+	transform: translate(-50% ,-50%);
+	width: 40px;
 }
 
-#pokemon_vida_contenedor p.vida-mayor{
+#pokemon_vida_contenedor.valor-menor  i{
+	color: rgba(255, 0, 0, 0.5);
+}
+
+#pokemon_vida_contenedor.valor-mayor  p{
 	color: #44ff44;
 	font-size: 26px;
     text-shadow: 0 0 7px #fff;
 }
 
-#pokemon_vida_contenedor p.vida-menor{
-	color: #900303;
-    text-shadow: 0 0 7px #fff;
-}
-
-#pokemon_vida_contenedor .icon-heart-broken + p{
-	display: none;
+#pokemon_vida_contenedor.valor-cero > p{
+	opacity: 0;
 }
 .icono-capturado{
 	background-image: url(../img/pokebola.svg);
@@ -642,6 +648,16 @@
     width: 30px;
 }
 
+.carta_container .pokemon_parametro.valor-menor > p,
+.carta_container .pokemon_parametro.valor-menor > i{
+	background: #795353;
+}
+
+.carta_container .pokemon_parametro.valor-mayor > p,
+.carta_container .pokemon_parametro.valor-mayor > i{
+	background: #3e7956;
+}
+
 #pokemon_ataque_contenedor{
 	left: 0;
 }
@@ -755,7 +771,7 @@
     width: 100%;
 }
 
-#entrenador .entrenador_pokemons > div{
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton{
 	background-image: url(../img/pokebola.svg);
 	background-size: cover;
 	border-radius: 50%;
@@ -771,20 +787,44 @@
     width: 50px;
 }
 
-#entrenador .entrenador_pokemons > div:after{
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:after{
 	bottom: -6px;
 	position: absolute;
 	width: 100%;
 }
 
-#entrenador .entrenador_pokemons > div:nth-child(1)::after{
+#entrenador .entrenador_pokemons .centrar-pokebolas{
+	margin: 0 auto;
+	text-align: center;
+	width: 260px;
+}
+
+#entrenador .entrenador_pokemons .centrar-pokebolas .entrenador-pokemon-boton:nth-child(4)
+#entrenador .entrenador_pokemons .centrar-pokebolas .entrenador-pokemon-boton:nth-child(5),
+#entrenador .entrenador_pokemons .centrar-pokebolas .entrenador-pokemon-boton:nth-child(6){
+	margin-top: 20px;
+}
+
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(1)::after{
 	content: "1";
 }
 
-#entrenador .entrenador_pokemons > div:nth-child(2)::after{
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(2)::after{
 	content: "2";
 }
 
-#entrenador .entrenador_pokemons > div:nth-child(3)::after{
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(3)::after{
 	content: "3";
+}
+
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(4)::after{
+	content: "4";
+}
+
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(5)::after{
+	content: "5";
+}
+
+#entrenador .entrenador_pokemons .entrenador-pokemon-boton:nth-child(6)::after{
+	content: "6";
 }
